@@ -104,7 +104,6 @@
 		A2A4B4AB14BF66B80005BC7D = {
 			isa = PBXGroup;
 			children = (
-				A20ED11214BF8DF500B4E976 /* CoreLocation.framework */,
 				A2A4B4C014BF66B80005BC7D /* Work From Cafe */,
 				A2B9E84F14BF748D006988B6 /* extern */,
 				A2A4B4B914BF66B80005BC7D /* Frameworks */,
@@ -127,6 +126,7 @@
 				A2A4B4BC14BF66B80005BC7D /* Foundation.framework */,
 				A2A4B4BE14BF66B80005BC7D /* CoreGraphics.framework */,
 				A259A95514BF84D300DF0E0C /* MapKit.framework */,
+				A20ED11214BF8DF500B4E976 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -331,6 +331,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Blazej Biesiada (B8NS5HZ6AN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -346,6 +347,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "BA1CE01C-54CB-4C59-A096-C144EE1736A2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

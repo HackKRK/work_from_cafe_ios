@@ -59,15 +59,15 @@
     
     MKCoordinateRegion region;
     CLLocationCoordinate2D coordinates;
-    coordinates.latitude = 10.0;
-    coordinates.longitude = 10.0;
+    coordinates.latitude = 0.0;
+    coordinates.longitude = 0.0;
     
     MKCoordinateSpan span;
-    span.latitudeDelta = 0.1;
-    span.longitudeDelta = 0.1;
+    span.latitudeDelta = 0.01;
+    span.longitudeDelta = 0.01;
     region.span = span;
     
-    [self.view.mapView setRegion:region];
+    [self.view.mapView setRegion:region animated:YES];
 }
 
 
