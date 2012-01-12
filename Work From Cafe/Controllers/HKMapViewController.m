@@ -42,7 +42,8 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    self.view.mapView.centerCoordinate = self.cafes.myLocation.coordinate;
+    [self.view.mapView setCenterCoordinate:self.cafes.myLocation.coordinate
+                                  animated:YES];
     [self.view setNeedsDisplay];
 }
 
