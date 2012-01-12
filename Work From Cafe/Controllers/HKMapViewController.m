@@ -42,7 +42,8 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"%@", keyPath);
+    self.view.mapView.centerCoordinate = self.cafes.myLocation.coordinate;
+    [self.view setNeedsDisplay];
 }
 
 
@@ -61,8 +62,8 @@
     coordinates.longitude = 10.0;
     
     MKCoordinateSpan span;
-    span.latitudeDelta = 1.0;
-    span.longitudeDelta = 1.0;
+    span.latitudeDelta = 0.1;
+    span.longitudeDelta = 0.1;
     region.span = span;
     
     [self.view.mapView setRegion:region];

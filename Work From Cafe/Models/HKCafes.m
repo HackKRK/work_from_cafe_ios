@@ -20,6 +20,7 @@
 
 
 @synthesize cafes = _cafes;
+@synthesize myLocation = _myLocation;
 @synthesize locationManager = _locationManager;
 
 
