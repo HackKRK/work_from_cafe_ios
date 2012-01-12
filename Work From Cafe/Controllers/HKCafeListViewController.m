@@ -9,6 +9,7 @@
 #import "HKCafeListViewController.h"
 #import "HKCafeListView.h"
 #import "HKCafe.h"
+#import "HKCafes.h"
 
 @interface HKCafeListViewController ()
 
@@ -20,7 +21,7 @@
 
 @dynamic view;
 
-- (id)initWithCafes:(NSArray *)someCafes {
+- (id)initWithCafes:(HKCafes *)someCafes {
     if (self = [self init]) {
         self.title = @"Cafe list";
         myCafes = someCafes;
@@ -31,7 +32,6 @@
 - (void)loadView {
     self.view = [[HKCafeListView alloc] initWithFrame:CGRectZero];
     self.view.tableView.delegate = self;
-    self.view.tableView.dataSource = self;
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
@@ -98,7 +98,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return myCafes.count;
+    return myCafes.cafes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -110,8 +110,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    HKCafe *myCafe = [myCafes objectAtIndex:indexPath.row];
-    cell.textLabel.text = myCafe.name;
+    cell.textLabel.text = [myCafes.cafes objectAtIndex:indexPath.row];
     
     // Configure the cell...
     
