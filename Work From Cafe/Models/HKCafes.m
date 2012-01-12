@@ -26,6 +26,7 @@
     if ((self = [super init]))
     {
         self.locationManager = [[CLLocationManager alloc] init];
+        [self.locationManager startUpdatingLocation];
     }
     return self;
 }
