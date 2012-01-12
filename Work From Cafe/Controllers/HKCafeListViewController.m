@@ -32,6 +32,7 @@
 - (void)loadView {
     self.view = [[HKCafeListView alloc] initWithFrame:CGRectZero];
     self.view.tableView.delegate = self;
+    self.view.tableView.dataSource = self;
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
