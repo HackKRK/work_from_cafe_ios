@@ -19,16 +19,16 @@
 		A2A4B4D914BF68B80005BC7D /* HKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A4B4D814BF68B80005BC7D /* HKTabBarController.m */; };
 		A2A4B4DC14BF68EB0005BC7D /* HKCafeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A4B4DB14BF68EB0005BC7D /* HKCafeListViewController.m */; };
 		A2A4B4DF14BF69200005BC7D /* HKCafeListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A4B4DE14BF69200005BC7D /* HKCafeListView.m */; };
-		A2B9E86814BF7511006988B6 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85314BF7511006988B6 /* AFHTTPClient.m */; };
-		A2B9E86914BF7511006988B6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85514BF7511006988B6 /* AFHTTPRequestOperation.m */; };
-		A2B9E86A14BF7511006988B6 /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85714BF7511006988B6 /* AFImageCache.m */; };
-		A2B9E86B14BF7511006988B6 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85914BF7511006988B6 /* AFImageRequestOperation.m */; };
-		A2B9E86C14BF7511006988B6 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85B14BF7511006988B6 /* AFJSONRequestOperation.m */; };
-		A2B9E86D14BF7511006988B6 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85E14BF7511006988B6 /* AFNetworkActivityIndicatorManager.m */; };
-		A2B9E86E14BF7511006988B6 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86114BF7511006988B6 /* AFPropertyListRequestOperation.m */; };
-		A2B9E86F14BF7511006988B6 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86314BF7511006988B6 /* AFURLConnectionOperation.m */; };
-		A2B9E87014BF7511006988B6 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86514BF7511006988B6 /* AFXMLRequestOperation.m */; };
-		A2B9E87114BF7511006988B6 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86714BF7511006988B6 /* UIImageView+AFNetworking.m */; };
+		A2B9E86814BF7511006988B6 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85314BF7511006988B6 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E86914BF7511006988B6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85514BF7511006988B6 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E86A14BF7511006988B6 /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85714BF7511006988B6 /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E86B14BF7511006988B6 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85914BF7511006988B6 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E86C14BF7511006988B6 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85B14BF7511006988B6 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E86D14BF7511006988B6 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E85E14BF7511006988B6 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E86E14BF7511006988B6 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86114BF7511006988B6 /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E86F14BF7511006988B6 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86314BF7511006988B6 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E87014BF7511006988B6 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86514BF7511006988B6 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2B9E87114BF7511006988B6 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E86714BF7511006988B6 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A2B9E87414BF7699006988B6 /* HKMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B9E87314BF7699006988B6 /* HKMapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +98,6 @@
 		A2A4B4AB14BF66B80005BC7D = {
 			isa = PBXGroup;
 			children = (
-				A259A95514BF84D300DF0E0C /* MapKit.framework */,
 				A2A4B4C014BF66B80005BC7D /* Work From Cafe */,
 				A2B9E84F14BF748D006988B6 /* extern */,
 				A2A4B4B914BF66B80005BC7D /* Frameworks */,
@@ -120,6 +119,7 @@
 				A2A4B4BA14BF66B80005BC7D /* UIKit.framework */,
 				A2A4B4BC14BF66B80005BC7D /* Foundation.framework */,
 				A2A4B4BE14BF66B80005BC7D /* CoreGraphics.framework */,
+				A259A95514BF84D300DF0E0C /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -337,6 +337,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -356,6 +357,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
