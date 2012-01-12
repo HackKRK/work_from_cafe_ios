@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20ED11014BF8BBE00B4E976 /* HKCafes.m in Sources */ = {isa = PBXBuildFile; fileRef = A20ED10F14BF8BBE00B4E976 /* HKCafes.m */; };
+		A20ED11314BF8DF500B4E976 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20ED11214BF8DF500B4E976 /* CoreLocation.framework */; };
 		A237778514BF833A00F8571B /* HKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = A237778414BF833A00F8571B /* HKMapView.m */; };
 		A259A95614BF84D300DF0E0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A259A95514BF84D300DF0E0C /* MapKit.framework */; };
 		A2A4B4BB14BF66B80005BC7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A4B4BA14BF66B80005BC7D /* UIKit.framework */; };
@@ -33,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A20ED10E14BF8BBE00B4E976 /* HKCafes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKCafes.h; path = Models/HKCafes.h; sourceTree = "<group>"; };
+		A20ED10F14BF8BBE00B4E976 /* HKCafes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKCafes.m; path = Models/HKCafes.m; sourceTree = "<group>"; };
+		A20ED11214BF8DF500B4E976 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A237778314BF833A00F8571B /* HKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKMapView.h; path = Views/HKMapView.h; sourceTree = "<group>"; };
 		A237778414BF833A00F8571B /* HKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKMapView.m; path = Views/HKMapView.m; sourceTree = "<group>"; };
 		A259A95514BF84D300DF0E0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -85,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20ED11314BF8DF500B4E976 /* CoreLocation.framework in Frameworks */,
 				A259A95614BF84D300DF0E0C /* MapKit.framework in Frameworks */,
 				A2A4B4BB14BF66B80005BC7D /* UIKit.framework in Frameworks */,
 				A2A4B4BD14BF66B80005BC7D /* Foundation.framework in Frameworks */,
@@ -98,6 +104,7 @@
 		A2A4B4AB14BF66B80005BC7D = {
 			isa = PBXGroup;
 			children = (
+				A20ED11214BF8DF500B4E976 /* CoreLocation.framework */,
 				A2A4B4C014BF66B80005BC7D /* Work From Cafe */,
 				A2B9E84F14BF748D006988B6 /* extern */,
 				A2A4B4B914BF66B80005BC7D /* Frameworks */,
@@ -153,6 +160,8 @@
 			children = (
 				A2A4B4D414BF676A0005BC7D /* HKCafe.h */,
 				A2A4B4D514BF676A0005BC7D /* HKCafe.m */,
+				A20ED10E14BF8BBE00B4E976 /* HKCafes.h */,
+				A20ED10F14BF8BBE00B4E976 /* HKCafes.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -298,6 +307,7 @@
 				A2B9E87114BF7511006988B6 /* UIImageView+AFNetworking.m in Sources */,
 				A2B9E87414BF7699006988B6 /* HKMapViewController.m in Sources */,
 				A237778514BF833A00F8571B /* HKMapView.m in Sources */,
+				A20ED11014BF8BBE00B4E976 /* HKCafes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,6 +41,7 @@
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     self.view.mapView.delegate = self;
+    self.view.mapView.mapType = MKMapTypeStandard;
     
     MKCoordinateRegion region;
     CLLocationCoordinate2D coordinates;
