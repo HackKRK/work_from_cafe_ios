@@ -13,9 +13,19 @@
 
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *descInternet;
+@property (nonatomic, strong) NSString *descPower;
+@property (nonatomic, strong) NSString *descSeating;
+@property (nonatomic, strong) NSString *descService;
+@property (nonatomic, strong) NSString *descProvision;
 
 
 - (id)initWithDict:(NSDictionary *)jsonDict;
+
+
+- (CLLocationCoordinate2D *)coordinate;
 
 
 @end

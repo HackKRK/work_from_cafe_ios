@@ -58,24 +58,18 @@
     self.view.mapView.mapType = MKMapTypeStandard;
 }
 
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog(@"map view did appear!");
-    
-    CLLocationCoordinate2D coordinates;
-    coordinates.latitude = 42;
-    coordinates.longitude = 42;
-    
     MKCoordinateSpan span;
-    span.latitudeDelta = 1;
-    span.longitudeDelta = 1;
+    span.latitudeDelta = 0.1;
+    span.longitudeDelta = 0.1;
     
     MKCoordinateRegion region;
-    region.center = coordinates;
+    region.center = self.cafes.myLocation.coordinate;
     region.span = span;
-    
-    
+        
     [self.view.mapView setRegion:region animated:YES];
 }
 
