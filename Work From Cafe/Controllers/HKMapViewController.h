@@ -16,7 +16,7 @@
 @interface HKMapViewController : UIViewController <MKMapViewDelegate>
 
 
-- (id)initWithCafes:(HKCafes *)someCafes;
+- (id)initWithCafes:(HKCafes *)cafes;
 
 
 @end

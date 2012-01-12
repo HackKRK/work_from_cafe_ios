@@ -14,6 +14,7 @@
 
 
 @property (nonatomic, readwrite, strong) NSMutableArray *cafes;
+@property (nonatomic, readonly, strong) CLLocation *myLocation;
 
 
 @end

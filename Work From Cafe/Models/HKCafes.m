@@ -11,6 +11,7 @@
 
 
 @interface HKCafes () // Private
+@property (nonatomic, readwrite, strong) CLLocation *myLocation;
 @property (nonatomic, readwrite, strong) CLLocationManager *locationManager;
 @end
 
@@ -26,12 +27,12 @@
 {
     if ((self = [super init]))
     {
-        NSMutableArray *cafes = [NSMutableArray arrayWithCapacity:10];
+        self.cafes = [NSMutableArray arrayWithCapacity:10];
         for (int i = 0; i<10; i++)
         {
             HKCafe *cafe = [HKCafe new];
             cafe.name = [NSString stringWithFormat:@"Cafe #%d", i];
-            [cafes addObject:cafe];
+            [self.cafes addObject:cafe];
         }
         
         self.locationManager = [[CLLocationManager alloc] init];
@@ -48,8 +49,7 @@
 	didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"new location: %@", newLocation);
-    
+    self.myLocation = newLocation;
 }
 
 

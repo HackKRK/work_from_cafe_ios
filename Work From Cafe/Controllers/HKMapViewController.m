@@ -12,8 +12,8 @@
 
 
 @interface HKMapViewController () // Private
+@property (nonatomic, readwrite, strong) HKCafes *cafes;
 @property (nonatomic, readwrite, strong) HKMapView *view;
-@property (nonatomic, readwrite, strong) NSArray *cafes;
 @end
 
 
@@ -24,14 +24,25 @@
 @dynamic view; // supplied by UIViewController
 
 
-- (id)initWithCafes:(HKCafes *)someCafes;
+- (id)initWithCafes:(HKCafes *)cafes;
 {
     if ((self = [super init]))
     {
-        self.cafes = someCafes.cafes;
+        self.cafes = cafes;
         self.title = @"Map";
+        
+        [self addObserver:self
+               forKeyPath:@"cafes"
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
+                  context:NULL];
     }
     return self;
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"%@", keyPath);
 }
 
 
