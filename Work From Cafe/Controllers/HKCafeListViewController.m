@@ -7,19 +7,25 @@
 //
 
 #import "HKCafeListViewController.h"
+#import "HKCafeListView.h"
+#import "HKCafe.h"
 
 
 @implementation HKCafeListViewController
 
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+- (id)initWithCafes:(NSArray *)someCafes {
+    if (self = [self init]) {
+        myCafes = someCafes;
     }
     return self;
 }
+
+- (void)loadView {
+    self.view = [[HKCafeListView alloc] initWithFrame:CGRectZero];
+    self.view.autoresizesSubviews = YES;
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,18 +83,12 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return myCafes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

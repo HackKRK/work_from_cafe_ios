@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class HKCafe;
 
-@interface HKCafeListViewController : UIViewController
+@interface HKCafeListViewController : UIViewController {
+    NSArray __strong *myCafes;
+}
 
+- (id)initWithCafes:(NSArray *)someCafes;
 
 @end
