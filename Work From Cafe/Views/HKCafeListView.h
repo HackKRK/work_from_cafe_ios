@@ -11,8 +11,6 @@
 
 @interface HKCafeListView : UIView
 
-
 @property (nonatomic, strong) UITableView *tableView;
-
 
 @end
