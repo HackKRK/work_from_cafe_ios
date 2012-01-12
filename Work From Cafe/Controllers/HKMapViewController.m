@@ -8,6 +8,7 @@
 
 #import "HKMapViewController.h"
 #import "HKMapView.h"
+#import "HKCafes.h"
 
 
 @interface HKMapViewController () // Private
@@ -23,11 +24,11 @@
 @dynamic view; // supplied by UIViewController
 
 
-- (id)initWithCafes:(NSArray *)someCafes
+- (id)initWithCafes:(HKCafes *)someCafes;
 {
     if ((self = [super init]))
     {
-        self.cafes = someCafes;
+        self.cafes = someCafes.cafes;
         self.title = @"Map";
     }
     return self;

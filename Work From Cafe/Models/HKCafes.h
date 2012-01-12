@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface HKCafes : NSArray
+@interface HKCafes : NSObject <CLLocationManagerDelegate>
+
+
+@property (nonatomic, readwrite, strong) NSMutableArray *cafes;
 
 
 @end

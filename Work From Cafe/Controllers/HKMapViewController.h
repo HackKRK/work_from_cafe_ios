@@ -10,10 +10,13 @@
 #import <MapKit/MapKit.h>
 
 
+@class HKCafes;
+
+
 @interface HKMapViewController : UIViewController <MKMapViewDelegate>
 
 
-- (id)initWithCafes:(NSArray *)someCafes;
+- (id)initWithCafes:(HKCafes *)someCafes;
 
 
 @end

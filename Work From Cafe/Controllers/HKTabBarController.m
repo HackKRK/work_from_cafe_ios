@@ -9,10 +9,18 @@
 #import "HKTabBarController.h"
 #import "HKCafeListViewController.h"
 #import "HKMapViewController.h"
-#import "HKCafe.h"
+#import "HKCafes.h"
+
+
+@interface HKTabBarController () // Priavte
+@property (nonatomic, readwrite, strong) HKCafes *cafes;
+@end
 
 
 @implementation HKTabBarController
+
+
+@synthesize cafes = _cafes;
 
 
 - (id)init
@@ -20,17 +28,11 @@
     
     if ((self = [super init]))
     {
-        NSMutableArray *cafes = [NSMutableArray arrayWithCapacity:10];
-        for (int i = 0; i<10; i++)
-        {
-            HKCafe *cafe = [HKCafe new];
-            cafe.name = [NSString stringWithFormat:@"Cafe #%d", i];
-            [cafes addObject:cafe];
-        }
+        self.cafes = [[HKCafes alloc] init];
         
         [self setViewControllers:[NSArray arrayWithObjects:
-                                  [[HKCafeListViewController alloc] initWithCafes:cafes],
-                                  [[HKMapViewController alloc] initWithCafes:cafes],
+                                  [[HKCafeListViewController alloc] initWithCafes:self.cafes],
+                                  [[HKMapViewController alloc] initWithCafes:self.cafes],
                                   nil]];
     }
     return self;
