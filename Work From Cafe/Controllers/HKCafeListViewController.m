@@ -22,6 +22,7 @@
 
 - (id)initWithCafes:(NSArray *)someCafes {
     if (self = [self init]) {
+        self.title = @"Cafe list";
         myCafes = someCafes;
     }
     return self;
@@ -30,6 +31,7 @@
 - (void)loadView {
     self.view = [[HKCafeListView alloc] initWithFrame:CGRectZero];
     self.view.tableView.delegate = self;
+    self.view.tableView.dataSource = self;
     self.view.autoresizesSubviews = YES;
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
@@ -108,7 +110,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [myCafes objectAtIndex:indexPath.row];
+    HKCafe *myCafe = [myCafes objectAtIndex:indexPath.row];
+    cell.textLabel.text = myCafe.name;
     
     // Configure the cell...
     

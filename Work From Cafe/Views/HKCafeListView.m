@@ -22,7 +22,8 @@
     {
         self.tableView = [[UITableView alloc] initWithFrame:self.bounds
                                                       style:UITableViewStylePlain];
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.tableView.autoresizesSubviews = YES;
+        self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self addSubview:self.tableView];
     }
     return self;
