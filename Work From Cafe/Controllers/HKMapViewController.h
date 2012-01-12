@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface HKMapViewController : UITableViewController
+
+@interface HKMapViewController : UITableViewController <MKMapViewDelegate>
+
+
+- (id)initWithCafes:(NSArray *)someCafes;
+
 
 @end
