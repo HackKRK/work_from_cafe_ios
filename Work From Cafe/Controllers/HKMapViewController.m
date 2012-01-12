@@ -56,20 +56,28 @@
     
     self.view.mapView.delegate = self;
     self.view.mapView.mapType = MKMapTypeStandard;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    MKCoordinateRegion region;
+    NSLog(@"map view did appear!");
+    
     CLLocationCoordinate2D coordinates;
-    coordinates.latitude = 0.0;
-    coordinates.longitude = 0.0;
+    coordinates.latitude = 42;
+    coordinates.longitude = 42;
     
     MKCoordinateSpan span;
-    span.latitudeDelta = 0.01;
-    span.longitudeDelta = 0.01;
+    span.latitudeDelta = 1;
+    span.longitudeDelta = 1;
+    
+    MKCoordinateRegion region;
+    region.center = coordinates;
     region.span = span;
+    
     
     [self.view.mapView setRegion:region animated:YES];
 }
-
 
 #pragma mark -
 #pragma mark <MKMapViewDelegate>

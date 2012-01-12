@@ -25,7 +25,6 @@
 
 - (id)init
 {
-    
     if ((self = [super init]))
     {
         self.cafes = [[HKCafes alloc] init];
@@ -37,6 +36,5 @@
     }
     return self;
 }
-
 
 @end
