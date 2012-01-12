@@ -25,8 +25,18 @@
     if (self = [self init]) {
         self.title = @"Cafe list";
         myCafes = someCafes;
+        
+        [self addObserver:self
+               forKeyPath:@"myCafes.cafes"
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
+                  context:NULL];
     }
     return self;
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    [self.view.tableView reloadData];
 }
 
 - (void)loadView {

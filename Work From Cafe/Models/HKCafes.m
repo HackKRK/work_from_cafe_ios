@@ -8,6 +8,7 @@
 
 #import "HKCafes.h"
 #import "HKCafe.h"
+#import "AFNetworking.h"
 
 
 @interface HKCafes () // Private
@@ -28,17 +29,31 @@
 {
     if ((self = [super init]))
     {
-        self.cafes = [NSMutableArray arrayWithCapacity:10];
-        for (int i = 0; i<10; i++)
-        {
-            HKCafe *cafe = [HKCafe new];
-            cafe.name = [NSString stringWithFormat:@"Cafe #%d", i];
-            [self.cafes addObject:cafe];
-        }
-        
+        // start gps
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         [self.locationManager startUpdatingLocation];
+        
+        // populate with cafes from web
+        self.cafes = [NSMutableArray arrayWithCapacity:10];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://kaaes.github.com/work_from_cafe/mobile.json"]];
+        __block HKCafes  *blockself = self;
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                                                            success: ^ (NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+                                             {
+                                                 [self willChangeValueForKey:@"cafes"];
+                                                 for (NSDictionary *cafeDict in JSON)
+                                                 {
+                                                     HKCafe *newCafe = [[HKCafe alloc] initWithDict:cafeDict];
+                                                     [blockself.cafes addObject:newCafe];
+                                                 }
+                                                 [self didChangeValueForKey:@"cafes"];
+                                             }
+                                                                                            failure:nil];
+        
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        [queue addOperation:operation];
     }
     return self;
 }
