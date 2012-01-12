@@ -10,7 +10,7 @@
 
 @class HKCafe;
 
-@interface HKCafeListViewController : UIViewController {
+@interface HKCafeListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSArray __strong *myCafes;
 }
 
