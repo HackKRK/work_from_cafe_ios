@@ -111,7 +111,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [myCafes.cafes objectAtIndex:indexPath.row];
+    HKCafe *cafe = [myCafes.cafes objectAtIndex:indexPath.row];
+    cell.textLabel.text = cafe.name;
     
     // Configure the cell...
     
