@@ -62,9 +62,9 @@
 }
 
 
-- (CLLocationCoordinate2D)coordinate
+- (CLLocation *)location
 {
-    return self.placemark.location.coordinate;
+    return self.placemark.location;
 }
 
 

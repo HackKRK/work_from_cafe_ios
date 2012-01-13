@@ -16,4 +16,7 @@
 @property (nonatomic, readonly, strong) CLLocation *myLocation;
 
 
+- (NSArray *)cafeNearMe;
+
+
 @end

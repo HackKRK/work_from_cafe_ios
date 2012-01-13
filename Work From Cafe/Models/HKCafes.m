@@ -59,6 +59,22 @@
 }
 
 
+- (NSArray *)cafeNearMe
+{
+    NSMutableArray *cafesNearMe = [NSMutableArray arrayWithCapacity:10];
+    
+    for (HKCafe *cafe in self.cafes)
+    {
+        if ([self.myLocation distanceFromLocation:[cafe location]] < 5000.0)
+        {
+            [cafesNearMe addObject:cafe];
+        }
+    }
+    
+    return cafesNearMe;
+}
+
+
 #pragma mark -
 #pragma mark <CLLocationManagerDelegate>
 - (void)locationManager:(CLLocationManager *)manager
