@@ -25,7 +25,7 @@
 - (id)initWithDict:(NSDictionary *)jsonDict;
 
 
-- (CLLocationCoordinate2D *)coordinate;
+- (CLLocationCoordinate2D)coordinate;
 
 
 @end

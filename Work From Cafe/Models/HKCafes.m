@@ -38,7 +38,7 @@
         self.cafes = [NSMutableArray arrayWithCapacity:10];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://kaaes.github.com/work_from_cafe/mobile.json"]];
-        __block HKCafes  *blockself = self;
+        __block HKCafes *blockself = self;
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                                                             success: ^ (NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
                                              {

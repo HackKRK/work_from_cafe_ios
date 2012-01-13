@@ -9,7 +9,15 @@
 #import "HKCafe.h"
 
 
+@interface HKCafe () // Private
+@property (nonatomic, readwrite, strong) CLPlacemark *placemark;
+@end
+
+
 @implementation HKCafe
+
+
+@synthesize placemark = _placemark;
 
 
 @synthesize name = _name;
@@ -36,14 +44,24 @@
         self.descSeating = [descDict objectForKey:@"seating"];
         self.descService = [descDict objectForKey:@"service"];
         self.descProvision = [descDict objectForKey:@"provision"];
+        
+        __block HKCafe *blockself = self;
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:[NSString stringWithFormat:@"%@, %@", self.city, self.address]
+                     completionHandler: ^ (NSArray *placemarks, NSError *error)
+         {
+             [blockself willChangeValueForKey:@"coordinate"];
+             blockself.placemark = [placemarks lastObject];
+             [blockself didChangeValueForKey:@"coordinate"];
+         }];
     }
     return self;
 }
 
 
-- (CLLocationCoordinate2D *)coordinate
+- (CLLocationCoordinate2D)coordinate
 {
-    return nil;
+    return self.placemark.location.coordinate;
 }
 
 
