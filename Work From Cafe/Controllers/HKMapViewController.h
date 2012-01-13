@@ -18,5 +18,7 @@
 
 - (id)initWithCafes:(HKCafes *)cafes;
 
+- (void)showCoordinate:(CLLocationCoordinate2D)someCoordinate;
+
 
 @end

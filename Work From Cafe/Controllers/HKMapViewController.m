@@ -73,6 +73,18 @@
     [self.view.mapView setRegion:region animated:YES];
 }
 
+- (void)showCoordinate:(CLLocationCoordinate2D)someCoordinate {
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.1;
+    span.longitudeDelta = 0.1;
+    
+    MKCoordinateRegion region;
+    region.center = someCoordinate;
+    region.span = span;
+    
+    [self.view.mapView setRegion:region animated:YES];
+}
+
 #pragma mark -
 #pragma mark <MKMapViewDelegate>
 
