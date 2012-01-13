@@ -10,6 +10,7 @@
 #import "HKCafeListView.h"
 #import "HKCafe.h"
 #import "HKCafes.h"
+#import "HKMapViewController.h"
 
 @interface HKCafeListViewController ()
 
@@ -179,11 +180,14 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     
-    self.tabBarController.selectedIndex = 1;
+    HKCafe *myCafe = [myCafes.cafes objectAtIndex:indexPath.row];
+    CLLocationCoordinate2D coordinates = [myCafe coordinate];
     
-    CLLocationCoordinate2D coordinates;
-    coordinates.latitude = 42;
-    coordinates.longitude = 42;
+    self.tabBarController.selectedIndex = 1;
+    HKMapViewController *darnMap = (HKMapViewController *) [self.tabBarController.viewControllers lastObject];
+    
+    [darnMap showCoordinate:coordinates];
+
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "HKCafes.h"
 
 
+
 @interface HKMapViewController () // Private
 @property (nonatomic, readwrite, strong) HKCafes *cafes;
 @property (nonatomic, readwrite, strong) HKMapView *view;
@@ -21,6 +22,8 @@
 
 
 @synthesize cafes = _cafes;
+@synthesize locationToShow = _locationToShow;
+
 @dynamic view; // supplied by UIViewController
 
 
@@ -62,28 +65,34 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.1;
-    span.longitudeDelta = 0.1;
-    
-    MKCoordinateRegion region;
-    region.center = self.cafes.myLocation.coordinate;
-    region.span = span;
+    if (self.locationToShow) {
+        MKCoordinateSpan span;
+        span.latitudeDelta = 0.1;
+        span.longitudeDelta = 0.1;
         
-    [self.view.mapView setRegion:region animated:YES];
+        MKCoordinateRegion region;
+        region.center = self.cafes.myLocation.coordinate;
+        region.span = span;
+            
+        [self.view.mapView setRegion:region animated:YES];
+        self.locationToShow = nil;
+        
+    }
 }
 
-- (void)showCoordinate:(CLLocationCoordinate2D)someCoordinate {
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.1;
-    span.longitudeDelta = 0.1;
-    
-    MKCoordinateRegion region;
-    region.center = someCoordinate;
-    region.span = span;
-    
-    [self.view.mapView setRegion:region animated:YES];
-}
+//- (void)showCoordinate:(CLLocationCoordinate2D)someCoordinate {
+//    _loaded = YES;
+//    
+//    MKCoordinateSpan span;
+//    span.latitudeDelta = 0.1;
+//    span.longitudeDelta = 0.1;
+//    
+//    MKCoordinateRegion region;
+//    region.center = someCoordinate;
+//    region.span = span;
+//    
+//    [self.view.mapView setRegion:region animated:YES];
+//}
 
 #pragma mark -
 #pragma mark <MKMapViewDelegate>

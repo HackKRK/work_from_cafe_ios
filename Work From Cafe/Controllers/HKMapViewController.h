@@ -13,12 +13,14 @@
 @class HKCafes;
 
 
-@interface HKMapViewController : UIViewController <MKMapViewDelegate>
+@interface HKMapViewController : UIViewController <MKMapViewDelegate> {
+    
+}
 
 
 - (id)initWithCafes:(HKCafes *)cafes;
 
-- (void)showCoordinate:(CLLocationCoordinate2D)someCoordinate;
+@property (nonatomic, readwrite, strong) CLLocation *locationToShow;
 
 
 @end
