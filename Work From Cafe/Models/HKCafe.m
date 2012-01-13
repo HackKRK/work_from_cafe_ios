@@ -50,9 +50,12 @@
         [geocoder geocodeAddressString:[NSString stringWithFormat:@"%@, %@", self.city, self.address]
                      completionHandler: ^ (NSArray *placemarks, NSError *error)
          {
-             [blockself willChangeValueForKey:@"coordinate"];
-             blockself.placemark = [placemarks lastObject];
-             [blockself didChangeValueForKey:@"coordinate"];
+             if ([placemarks count] > 0)
+             {
+                 [blockself willChangeValueForKey:@"coordinate"];
+                 blockself.placemark = [placemarks objectAtIndex:0];
+                 [blockself didChangeValueForKey:@"coordinate"];
+             }
          }];
     }
     return self;
